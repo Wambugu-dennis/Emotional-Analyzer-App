@@ -29,7 +29,10 @@ if api_key:
         \"\"\"{input_text}\"\"\"
         """
 
-        response = openai.ChatCompletion.create(
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+
+        response = client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
