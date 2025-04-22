@@ -1,5 +1,5 @@
 import streamlit as st
-import openai==0.28
+import openai 0.28
 import matplotlib.pyplot as plt
 import datetime
 
@@ -10,7 +10,7 @@ st.title("📊 Emotional Analyzer & Trend Visualizer")
 api_key = st.sidebar.text_input("Enter your OpenAI API Key:", type="password")
 
 if api_key:
-    openai==0.28.api_key = api_key
+    openai 0.28.api_key = api_key
 
     history = []
 
@@ -29,7 +29,7 @@ if api_key:
         \"\"\"{input_text}\"\"\"
         """
 
-        from openai==0.28 import OpenAI
+        from openai 0.28 import OpenAI
         client = OpenAI(api_key=api_key)
 
         response = client.chat.completions.create(
