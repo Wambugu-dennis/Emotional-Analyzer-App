@@ -172,19 +172,18 @@ def plot_emotional_trends():
     st.pyplot(fig)
 
 # Input text box
-input_text = st.text_area("Enter text to analyze:", height=150)
-    
-    if st.button("Analyze"):
-        if input_text.strip() == "":
-            st.warning("Please enter some text!")
-        else:
-            with st.spinner("Analyzing..."):
-                result = analyze(input_text)
-                st.subheader("🔍 Analysis Result")
-                st.text(result)
-
-    if st.button("Show Emotional Trend"):
-        plot_emotional_trends()
-
+input_text = st.text_area("Enter text to analyze:", height=150)    
+if st.button("Analyze"):
+    if input_text.strip() == "":
+        st.warning("Please enter some text!")
     else:
-        st.info("Please enter your OpenAI API key in the sidebar to get started.")
+        with st.spinner("Analyzing..."):
+            result = analyze(input_text)
+            st.subheader("🔍 Analysis Result")
+            st.text(result)
+
+if st.button("Show Emotional Trend"):
+    plot_emotional_trends()
+
+else:
+    st.info("Please enter your OpenAI API key in the sidebar to get started.")
