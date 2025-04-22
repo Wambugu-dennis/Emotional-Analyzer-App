@@ -14,7 +14,7 @@ if api_key:
 
     history = []
 
-    def analyze(input_text, model="gpt-4o"):
+    def analyze(input_text, model="gpt-4o-mini"):
         prompt = f"""
         You are a highly insightful, friendly assistant. Analyze the text below and respond with:
         1. A brief summary.
